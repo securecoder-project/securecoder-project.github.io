@@ -8,10 +8,12 @@
         />
         <meta
             name="keywords"
-            content="SecureCoder, Code Generation, Security, Evaluation, LLM"
+            content="SecureCoder, Code Generation, Security, Evaluation, LLM, CWEval, SecCodePLT, CyberSecEval"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>SecureCoder</title>
+        <title>
+            SecureCoder: Security-Aware Code Generation and Evaluation
+        </title>
 
         <!-- Google Fonts -->
         <link
@@ -32,7 +34,7 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
         />
-        <link rel="stylesheet" href="./static/css/index.css" />
+        <link rel="stylesheet" href="./css/index.css" />
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
@@ -119,7 +121,7 @@
                                     <!-- Code Link. -->
                                     <span class="link-block">
                                         <a
-                                            href="#"
+                                            href="https://github.com/SecureCoder-Project"
                                             class="external-link button is-normal is-rounded is-dark"
                                         >
                                             <span class="icon">
@@ -128,20 +130,42 @@
                                             <span>Code</span>
                                         </a>
                                     </span>
-                                    <!-- Plugin Link. -->
-                                    <span class="link-block">
-                                        <a
-                                            href="#"
-                                            class="external-link button is-normal is-rounded is-dark"
-                                        >
-                                            <span class="icon">
-                                                <i
-                                                    class="fas fa-puzzle-piece"
-                                                ></i>
-                                            </span>
-                                            <span>JetBrains Plugin</span>
-                                        </a>
-                                    </span>
+                                </div>
+
+                                <!-- Architecture Diagram -->
+                                <div
+                                    class="container is-max-desktop"
+                                    style="margin-top: 30px"
+                                >
+                                    <div
+                                        class="columns is-centered has-text-centered"
+                                    >
+                                        <div class="column is-four-fifths">
+                                            <div
+                                                class="publication-video"
+                                                style="
+                                                    height: auto;
+                                                    padding-bottom: 0;
+                                                "
+                                            >
+                                                <img
+                                                    src="./static/images/architecture.png"
+                                                    alt="SecureCoder Architecture"
+                                                    style="
+                                                        width: 100%;
+                                                        object-fit: contain;
+                                                    "
+                                                />
+                                            </div>
+                                            <p
+                                                class="is-size-6 has-text-grey"
+                                                style="margin-top: 10px"
+                                            >
+                                                Figure 2: An overview of the
+                                                SecureCoder architecture
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -150,102 +174,242 @@
             </div>
         </section>
 
+        <!-- Abstract Section -->
         <section class="section">
             <div class="container is-max-desktop">
-                <!-- Abstract. -->
                 <div class="columns is-centered has-text-centered">
                     <div class="column is-four-fifths">
                         <h2 class="title is-3">Abstract</h2>
                         <div class="content has-text-justified">
                             <p>
-                                <strong>SecureCoder</strong> is a comprehensive
-                                pipeline designed for code generation and
-                                evaluation with a strong focus on security
-                                awareness. As large language models (LLMs)
-                                increasingly assist in software development,
-                                ensuring the security of generated code is
-                                paramount.
+                                LARGE LANGUAGE MODELS (LLMs) are increasingly
+                                used for software development, but their
+                                reliability in generating secure code remains a
+                                critical concern.
+                                <strong>SecureCoder</strong> addresses these
+                                risks by introducing a comprehensive pipeline
+                                for security-aware code generation and
+                                evaluation.
                             </p>
                             <p>
-                                The project features a
-                                <strong>JetBrains IDE plugin</strong> that
-                                provides real-time security feedback to
-                                developers. Additionally, we introduce a robust
-                                <strong>benchmark CLI tool</strong> capable of
-                                evaluating code generation models, available via
-                                OpenRouter or running as local agents, against
-                                state-of-the-art security benchmarks. Supported
-                                benchmarks include
-                                <a
-                                    href="https://arise-lab.github.io/cweval-bench/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >CWEval</a
-                                >,
-                                <a
-                                    href="https://seccodeplt.github.io"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >SecCodePLT</a
-                                >, and
-                                <a
-                                    href="https://meta-llama.github.io/PurpleLlama/CyberSecEval/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >CyberSecEval</a
-                                >.
+                                Our approach goes beyond generation by
+                                integrating
+                                <strong>real-time security feedback</strong>
+                                directly into the developer's workflow via a
+                                JetBrains IDE plugin. Furthermore, we provide a
+                                unified evaluation framework capable of
+                                rigorously testing models against benchmarks
+                                like <strong>CWEval</strong>,
+                                <strong>SecCodePLT</strong>, and
+                                <strong>CyberSecEval</strong>. By combining
+                                advanced techniques such as Graph Neural
+                                Networks (GNNs) and symbolic execution,
+                                SecureCoder aims to bridge the gap between
+                                AI-driven code synthesis and robust software
+                                security.
                             </p>
                         </div>
                     </div>
                 </div>
-                <!--/ Abstract. -->
             </div>
         </section>
 
+        <!-- JetBrains Plugin Section -->
         <section class="section">
             <div class="container is-max-desktop">
                 <div class="columns is-centered">
                     <div class="column is-full-width">
-                        <h2 class="title is-3">Project Overview</h2>
-
+                        <h2 class="title is-3 has-text-centered">
+                            JetBrains IDE Plugin
+                        </h2>
                         <div class="content has-text-justified">
-                            <h3 class="title is-4">Security-Aware Pipeline</h3>
                             <p>
-                                Our pipeline integrates security evaluation
-                                directly into the code generation process,
-                                ensuring that generated solutions are not just
-                                functional but also resistant to common
-                                vulnerabilities.
+                                The SecureCoder JetBrains plugin brings security
+                                awareness directly into your IDE. It analyzes
+                                code suggestions in real-time, highlighting
+                                potential vulnerabilities and suggesting secure
+                                alternatives based on our
+                                <strong>security-first prompting</strong> and
+                                <strong>constraint decoding</strong> techniques.
                             </p>
+                        </div>
 
-                            <h3 class="title is-4">JetBrains Plugin</h3>
-                            <p>
-                                The SecureCoder plugin integrates seamlessly
-                                into the JetBrains ecosystem. It assists
-                                developers by analyzing code in real-time and
-                                suggesting secure alternatives or highlighting
-                                potential vulnerabilities.
-                            </p>
+                        <!-- Demo Video Placeholder -->
+                        <div class="publication-video">
+                            <iframe
+                                src="https://www.youtube.com/embed/OVo9xiVlJsQ?rel=0&amp;showinfo=0"
+                                frameborder="0"
+                                allow="autoplay; encrypted-media"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
 
-                            <h3 class="title is-4">Benchmark CLI Tool</h3>
+                        <div
+                            class="columns is-centered"
+                            style="margin-top: 20px"
+                        >
+                            <div class="column has-text-centered">
+                                <a
+                                    href="#"
+                                    class="external-link button is-medium is-rounded is-primary"
+                                >
+                                    <span class="icon">
+                                        <i class="fas fa-download"></i>
+                                    </span>
+                                    <span>Download Plugin</span>
+                                </a>
+                                <a
+                                    href="https://plugins.jetbrains.com/plugin/28916-securecoder"
+                                    class="external-link button is-medium is-rounded is-light"
+                                >
+                                    <span class="icon">
+                                        <i class="fas fa-book"></i>
+                                    </span>
+                                    <span>Documentation</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benchmark CLI Tool Section -->
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column is-full-width">
+                        <h2 class="title is-3 has-text-centered">
+                            Benchmark CLI Tool
+                        </h2>
+                        <div class="content has-text-justified">
                             <p>
-                                To rigorously test the security capabilities of
-                                LLMs, we provide a versatile CLI tool. It
-                                streamlines the process of running security
-                                benchmarks on various models.
+                                Evaluating the security of code generation
+                                models requires rigorous testing. Our
+                                <strong>Benchmark CLI Tool</strong> provides a
+                                unified interface to benchmark models from
+                                <strong>OpenRouter</strong> or local agents
+                                against state-of-the-art security datasets.
                             </p>
-                            <ul>
-                                <li>
-                                    <strong>Model Support:</strong> Compatible
-                                    with models hosted on OpenRouter as well as
-                                    local agents.
-                                </li>
-                                <li>
-                                    <strong>Benchmarks:</strong> Includes
-                                    support for CWEval, SecCodePLT, and
-                                    CyberSecEval.
-                                </li>
-                            </ul>
+                        </div>
+
+                        <div class="columns is-vcentered">
+                            <div class="column is-6">
+                                <div class="content">
+                                    <h4 class="title is-4">Key Features</h4>
+                                    <ul>
+                                        <li>
+                                            <strong
+                                                >Multi-Model Support:</strong
+                                            >
+                                            Benchmark any model available on
+                                            OpenRouter or running locally.
+                                        </li>
+                                        <li>
+                                            <strong>Unified Evaluation:</strong>
+                                            Run benchmarks like
+                                            <a
+                                                href="https://arise-lab.github.io/cweval-bench/"
+                                                >CWEval</a
+                                            >,
+                                            <a
+                                                href="https://seccodeplt.github.io/"
+                                                >SecCodePLT</a
+                                            >, and
+                                            <a
+                                                href="https://github.com/facebookresearch/CyberSecEval"
+                                                >CyberSecEval</a
+                                            >
+                                            with a single command.
+                                        </li>
+                                        <li>
+                                            <strong
+                                                >Automated Reporting:</strong
+                                            >
+                                            Generate detailed reports on model
+                                            vulnerability rates.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="has-text-centered">
+                                    <a
+                                        href="#"
+                                        class="external-link button is-normal is-rounded is-dark"
+                                    >
+                                        <span class="icon">
+                                            <i class="fas fa-terminal"></i>
+                                        </span>
+                                        <span>View on GitHub</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="column is-6">
+                                <!-- CLI Demo Video Placeholder -->
+                                <div
+                                    class="publication-video"
+                                    style="padding-bottom: 56.25%"
+                                >
+                                    <video
+                                        id="cli-video"
+                                        controls
+                                        playsinline
+                                        height="100%"
+                                    >
+                                        <!-- Replace with your actual video file -->
+                                        <source
+                                            src="./static/videos/cli_demo.mp4"
+                                            type="video/mp4"
+                                        />
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emerging Techniques Section (Optional based on proposal) -->
+        <section class="section has-background-light">
+            <div class="container is-max-desktop">
+                <h2 class="title is-3 has-text-centered">
+                    Powering Techniques
+                </h2>
+                <div class="columns is-centered">
+                    <div class="column is-4">
+                        <div class="box" style="height: 100%">
+                            <h4 class="title is-5">Graph Neural Networks</h4>
+                            <div class="content">
+                                <p>
+                                    Integrates GNNs to model code structure at
+                                    the token level, improving the accuracy and
+                                    safety of generated code.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="box" style="height: 100%">
+                            <h4 class="title is-5">Symbolic Execution</h4>
+                            <div class="content">
+                                <p>
+                                    Combines symbolic execution with fine-tuning
+                                    to identify potential vulnerabilities during
+                                    the model training process.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="box" style="height: 100%">
+                            <h4 class="title is-5">Obfuscation Grounding</h4>
+                            <div class="content">
+                                <p>
+                                    Enhances model resilience by incorporating
+                                    obfuscation techniques into pre-training to
+                                    reduce the risk of generating insecure code.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -279,6 +443,13 @@
                                     href="https://github.com/nerfies/nerfies.github.io"
                                     >Nerfies</a
                                 >
+                                by Keunhong Park et al. Licensed under a
+                                <a
+                                    rel="license"
+                                    href="http://creativecommons.org/licenses/by-sa/4.0/"
+                                    >Creative Commons Attribution-ShareAlike 4.0
+                                    International License</a
+                                >.
                             </p>
                         </div>
                     </div>
