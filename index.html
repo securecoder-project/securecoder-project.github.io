@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="description"
+            content="SecureCoder: A pipeline for code generation and evaluation with security awareness."
+        />
+        <meta
+            name="keywords"
+            content="SecureCoder, Code Generation, Security, Evaluation, LLM"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>SecureCoder</title>
+
+        <!-- Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+            rel="stylesheet"
+        />
+
+        <!-- Bulma and Icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+        />
+        <link rel="stylesheet" href="./static/css/index.css" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a
+                    role="button"
+                    class="navbar-burger"
+                    aria-label="menu"
+                    aria-expanded="false"
+                >
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <div
+                    class="navbar-start"
+                    style="flex-grow: 1; justify-content: center"
+                >
+                    <a
+                        class="navbar-item"
+                        href="https://www.stg.tu-darmstadt.de"
+                    >
+                        <span class="icon">
+                            <i class="fas fa-home"></i>
+                        </span>
+                    </a>
+
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link"> More Research </a>
+                        <div class="navbar-dropdown">
+                            <a
+                                class="navbar-item"
+                                href="https://www.stg.tu-darmstadt.de"
+                            >
+                                STG-TuDA
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container is-max-desktop">
+                    <div class="columns is-centered">
+                        <div class="column has-text-centered">
+                            <h1 class="title is-1 publication-title">
+                                SecureCoder: Security-Aware Code Generation and
+                                Evaluation
+                            </h1>
+                            <div class="is-size-5 publication-authors">
+                                <span class="author-block">
+                                    <a href="https://www.stg.tu-darmstadt.de"
+                                        >STG-TuDA Group</a
+                                    >
+                                </span>
+                            </div>
+
+                            <div class="is-size-5 publication-authors">
+                                <span class="author-block"
+                                    >Technische Universität Darmstadt</span
+                                >
+                            </div>
+
+                            <div class="column has-text-centered">
+                                <div class="publication-links">
+                                    <!-- Paper Link. -->
+                                    <span class="link-block">
+                                        <a
+                                            href="#"
+                                            class="external-link button is-normal is-rounded is-dark"
+                                        >
+                                            <span class="icon">
+                                                <i class="fas fa-file-pdf"></i>
+                                            </span>
+                                            <span>Paper</span>
+                                        </a>
+                                    </span>
+                                    <!-- Code Link. -->
+                                    <span class="link-block">
+                                        <a
+                                            href="#"
+                                            class="external-link button is-normal is-rounded is-dark"
+                                        >
+                                            <span class="icon">
+                                                <i class="fab fa-github"></i>
+                                            </span>
+                                            <span>Code</span>
+                                        </a>
+                                    </span>
+                                    <!-- Plugin Link. -->
+                                    <span class="link-block">
+                                        <a
+                                            href="#"
+                                            class="external-link button is-normal is-rounded is-dark"
+                                        >
+                                            <span class="icon">
+                                                <i
+                                                    class="fas fa-puzzle-piece"
+                                                ></i>
+                                            </span>
+                                            <span>JetBrains Plugin</span>
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container is-max-desktop">
+                <!-- Abstract. -->
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <h2 class="title is-3">Abstract</h2>
+                        <div class="content has-text-justified">
+                            <p>
+                                <strong>SecureCoder</strong> is a comprehensive
+                                pipeline designed for code generation and
+                                evaluation with a strong focus on security
+                                awareness. As large language models (LLMs)
+                                increasingly assist in software development,
+                                ensuring the security of generated code is
+                                paramount.
+                            </p>
+                            <p>
+                                The project features a
+                                <strong>JetBrains IDE plugin</strong> that
+                                provides real-time security feedback to
+                                developers. Additionally, we introduce a robust
+                                <strong>benchmark CLI tool</strong> capable of
+                                evaluating code generation models, available via
+                                OpenRouter or running as local agents, against
+                                state-of-the-art security benchmarks. Supported
+                                benchmarks include
+                                <a
+                                    href="https://arise-lab.github.io/cweval-bench/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >CWEval</a
+                                >,
+                                <a
+                                    href="https://seccodeplt.github.io"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >SecCodePLT</a
+                                >, and
+                                <a
+                                    href="https://meta-llama.github.io/PurpleLlama/CyberSecEval/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >CyberSecEval</a
+                                >.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--/ Abstract. -->
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column is-full-width">
+                        <h2 class="title is-3">Project Overview</h2>
+
+                        <div class="content has-text-justified">
+                            <h3 class="title is-4">Security-Aware Pipeline</h3>
+                            <p>
+                                Our pipeline integrates security evaluation
+                                directly into the code generation process,
+                                ensuring that generated solutions are not just
+                                functional but also resistant to common
+                                vulnerabilities.
+                            </p>
+
+                            <h3 class="title is-4">JetBrains Plugin</h3>
+                            <p>
+                                The SecureCoder plugin integrates seamlessly
+                                into the JetBrains ecosystem. It assists
+                                developers by analyzing code in real-time and
+                                suggesting secure alternatives or highlighting
+                                potential vulnerabilities.
+                            </p>
+
+                            <h3 class="title is-4">Benchmark CLI Tool</h3>
+                            <p>
+                                To rigorously test the security capabilities of
+                                LLMs, we provide a versatile CLI tool. It
+                                streamlines the process of running security
+                                benchmarks on various models.
+                            </p>
+                            <ul>
+                                <li>
+                                    <strong>Model Support:</strong> Compatible
+                                    with models hosted on OpenRouter as well as
+                                    local agents.
+                                </li>
+                                <li>
+                                    <strong>Benchmarks:</strong> Includes
+                                    support for CWEval, SecCodePLT, and
+                                    CyberSecEval.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="content has-text-centered">
+                    <a
+                        class="icon-link"
+                        href="#"
+                        class="external-link"
+                        disabled
+                    >
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <div class="columns is-centered">
+                    <div class="column is-8">
+                        <div class="content">
+                            <p>
+                                Website content copyright &copy;
+                                <a href="https://www.stg.tu-darmstadt.de"
+                                    >STG-TuDA</a
+                                >.
+                            </p>
+                            <p>
+                                This page is adapted from
+                                <a
+                                    href="https://github.com/nerfies/nerfies.github.io"
+                                    >Nerfies</a
+                                >
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
