@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="description"
+        content="SecureCoder Benchmark CLI Tool: A unified interface to benchmark models against security datasets." />
+    <meta name="keywords" content="SecureCoder, Benchmark, CLI, Evaluation, LLM, CWEval, SecCodePLT, CyberSecEval" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+        Benchmark CLI Tool - SecureCoder
+    </title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
+
+    <!-- Bulma and Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start" style="flex-grow: 1; justify-content: center">
+                <a class="navbar-item" href="index.html">
+                    <span class="icon">
+                        <i class="fas fa-home"></i>
+                    </span>
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link"> Products </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="jetbrains-plugin.html">
+                            JetBrains Plugin
+                        </a>
+                        <a class="navbar-item" href="cli-tool.html">
+                            Benchmark CLI Tool
+                        </a>
+                    </div>
+                </div>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link"> More Research </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="https://www.stg.tu-darmstadt.de">
+                            STG-TuDA
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <h1 class="title is-2 has-text-centered">Benchmark CLI Tool</h1>
+                <h2 class="subtitle is-4 has-text-centered">Unified evaluation for secure code generation models</h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLI Tool Details Section -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column is-full-width">
+                    <div class="content">
+                        <h3 class="title is-3">Bridging the Gap in Open Evaluation</h3>
+                        <p>
+                            Developing secure code generation models requires robust benchmarking. Existing benchmarks
+                            are often scattered and difficult to integrate into a centralized CI/CD software pipeline.
+                            The SecureCoder CLI tool provides a unified framework capable of rigorously testing code
+                            generation paradigms across universally accepted datasets.
+                        </p>
+
+                        <h3 class="title is-3" style="margin-top: 2rem;">Core Workflows</h3>
+                        <div class="columns is-vcentered">
+                            <div class="column is-6">
+                                <ul>
+                                    <li>
+                                        <strong>OpenRouter & Local Inference:</strong> Run tests natively against heavy
+                                        local agents or point the tool via API token towards OpenRouter language models.
+                                    </li>
+                                    <li>
+                                        <strong>Unified Datasets:</strong> Native integration with benchmarks such as <a
+                                            href="https://seccodeplt.github.io/">SecCodePLT</a>, <a
+                                            href="https://arise-lab.github.io/cweval-bench/">CWEval</a>, and <a
+                                            href="https://github.com/facebookresearch/CyberSecEval">CyberSecEval</a>.
+                                    </li>
+                                    <li>
+                                        <strong>Automated Vulnerability Detection:</strong> Generates automated reports
+                                        mapping outputted vulnerability metrics back to prompt engineering strategies.
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="column is-6">
+                                <!-- CLI Demo Video Placeholder -->
+                                <div class="publication-video" style="padding-bottom: 56.25%">
+                                    <video id="cli-video" controls playsinline height="100%">
+                                        <!-- Replace with your actual video file -->
+                                        <source src="./static/videos/cli_demo.mp4" type="video/mp4" />
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="columns is-centered" style="margin-top: 30px">
+                        <div class="column has-text-centered">
+                            <a href="https://github.com/SecureCoder-Project"
+                                class="external-link button is-small is-rounded is-dark">
+                                <span class="icon is-small">
+                                    <i class="fab fa-github"></i>
+                                </span>
+                                <span>View Source & Documentation</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p class="has-text-centered">
+                            Website content copyright &copy;
+                            <a href="https://www.stg.tu-darmstadt.de">STG-TuDA</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,170 +1,122 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta
-            name="description"
-            content="SecureCoder: A pipeline for code generation and evaluation with security awareness."
-        />
-        <meta
-            name="keywords"
-            content="SecureCoder, Code Generation, Security, Evaluation, LLM, CWEval, SecCodePLT, CyberSecEval"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>
-            SecureCoder: Security-Aware Code Generation and Evaluation
-        </title>
 
-        <!-- Google Fonts -->
-        <link
-            href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-            rel="stylesheet"
-        />
+<head>
+    <meta charset="utf-8" />
+    <meta name="description"
+        content="SecureCoder: A pipeline for code generation and evaluation with security awareness." />
+    <meta name="keywords"
+        content="SecureCoder, Code Generation, Security, Evaluation, LLM, CWEval, SecCodePLT, CyberSecEval" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+        SecureCoder: Security-Aware Code Generation and Evaluation
+    </title>
 
-        <!-- Bulma and Icons -->
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
-        />
-        <link rel="stylesheet" href="./css/index.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    </head>
-    <body>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a
-                    role="button"
-                    class="navbar-burger"
-                    aria-label="menu"
-                    aria-expanded="false"
-                >
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
+    <!-- Bulma and Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start" style="flex-grow: 1; justify-content: center">
+                <a class="navbar-item" href="https://www.stg.tu-darmstadt.de">
+                    <span class="icon">
+                        <i class="fas fa-home"></i>
+                    </span>
                 </a>
-            </div>
-            <div class="navbar-menu">
-                <div
-                    class="navbar-start"
-                    style="flex-grow: 1; justify-content: center"
-                >
-                    <a
-                        class="navbar-item"
-                        href="https://www.stg.tu-darmstadt.de"
-                    >
-                        <span class="icon">
-                            <i class="fas fa-home"></i>
-                        </span>
-                    </a>
 
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link"> More Research </a>
-                        <div class="navbar-dropdown">
-                            <a
-                                class="navbar-item"
-                                href="https://www.stg.tu-darmstadt.de"
-                            >
-                                STG-TuDA
-                            </a>
-                        </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link"> Products </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="jetbrains-plugin.html">
+                            JetBrains Plugin
+                        </a>
+                        <a class="navbar-item" href="cli-tool.html">
+                            Benchmark CLI Tool
+                        </a>
+                    </div>
+                </div>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link"> More Research </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="https://www.stg.tu-darmstadt.de">
+                            STG-TuDA
+                        </a>
                     </div>
                 </div>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <section class="hero">
-            <div class="hero-body">
-                <div class="container is-max-desktop">
-                    <div class="columns is-centered">
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">
+                            SecureCoder: Security-Aware Code Generation and
+                            Evaluation
+                        </h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="https://www.stg.tu-darmstadt.de">STG-TuDA Group</a>
+                            </span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">Technische Universität Darmstadt</span>
+                        </div>
+
                         <div class="column has-text-centered">
-                            <h1 class="title is-1 publication-title">
-                                SecureCoder: Security-Aware Code Generation and
-                                Evaluation
-                            </h1>
-                            <div class="is-size-5 publication-authors">
-                                <span class="author-block">
-                                    <a href="https://www.stg.tu-darmstadt.de"
-                                        >STG-TuDA Group</a
-                                    >
+                            <div class="publication-links">
+                                <!-- Paper Link (Removed as there is no paper yet). -->
+                                <!-- Code Link. -->
+                                <span class="link-block">
+                                    <a href="https://github.com/SecureCoder-Project"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code</span>
+                                    </a>
                                 </span>
                             </div>
 
-                            <div class="is-size-5 publication-authors">
-                                <span class="author-block"
-                                    >Technische Universität Darmstadt</span
-                                >
-                            </div>
-
-                            <div class="column has-text-centered">
-                                <div class="publication-links">
-                                    <!-- Paper Link. -->
-                                    <span class="link-block">
-                                        <a
-                                            href="#"
-                                            class="external-link button is-normal is-rounded is-dark"
-                                        >
-                                            <span class="icon">
-                                                <i class="fas fa-file-pdf"></i>
-                                            </span>
-                                            <span>Paper</span>
-                                        </a>
-                                    </span>
-                                    <!-- Code Link. -->
-                                    <span class="link-block">
-                                        <a
-                                            href="https://github.com/SecureCoder-Project"
-                                            class="external-link button is-normal is-rounded is-dark"
-                                        >
-                                            <span class="icon">
-                                                <i class="fab fa-github"></i>
-                                            </span>
-                                            <span>Code</span>
-                                        </a>
-                                    </span>
-                                </div>
-
-                                <!-- Architecture Diagram -->
-                                <div
-                                    class="container is-max-desktop"
-                                    style="margin-top: 30px"
-                                >
-                                    <div
-                                        class="columns is-centered has-text-centered"
-                                    >
-                                        <div class="column is-four-fifths">
-                                            <div
-                                                class="publication-video"
-                                                style="
+                            <!-- Architecture Diagram -->
+                            <div class="container is-max-desktop" style="margin-top: 30px">
+                                <div class="columns is-centered has-text-centered">
+                                    <div class="column is-four-fifths">
+                                        <div class="publication-video" style="
                                                     height: auto;
                                                     padding-bottom: 0;
-                                                "
-                                            >
-                                                <img
-                                                    src="./static/images/architecture.png"
-                                                    alt="SecureCoder Architecture"
-                                                    style="
+                                                ">
+                                            <img src="./static/images/architecture.png" alt="SecureCoder Architecture"
+                                                style="
                                                         width: 100%;
                                                         object-fit: contain;
-                                                    "
-                                                />
-                                            </div>
-                                            <p
-                                                class="is-size-6 has-text-grey"
-                                                style="margin-top: 10px"
-                                            >
-                                                Figure 2: An overview of the
-                                                SecureCoder architecture
-                                            </p>
+                                                    " />
                                         </div>
+                                        <p class="is-size-6 has-text-grey" style="margin-top: 10px">
+                                            An overview of the
+                                            SecureCoder architecture
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -172,289 +124,214 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Abstract Section -->
-        <section class="section">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered has-text-centered">
-                    <div class="column is-four-fifths">
-                        <h2 class="title is-3">Abstract</h2>
-                        <div class="content has-text-justified">
-                            <p>
-                                LARGE LANGUAGE MODELS (LLMs) are increasingly
-                                used for software development, but their
-                                reliability in generating secure code remains a
-                                critical concern.
-                                <strong>SecureCoder</strong> addresses these
-                                risks by introducing a comprehensive pipeline
-                                for security-aware code generation and
-                                evaluation.
-                            </p>
-                            <p>
-                                Our approach goes beyond generation by
-                                integrating
-                                <strong>real-time security feedback</strong>
-                                directly into the developer's workflow via a
-                                JetBrains IDE plugin. Furthermore, we provide a
-                                unified evaluation framework capable of
-                                rigorously testing models against benchmarks
-                                like <strong>CWEval</strong>,
-                                <strong>SecCodePLT</strong>, and
-                                <strong>CyberSecEval</strong>. By combining
-                                advanced techniques such as Graph Neural
-                                Networks (GNNs) and symbolic execution,
-                                SecureCoder aims to bridge the gap between
-                                AI-driven code synthesis and robust software
-                                security.
-                            </p>
-                        </div>
+    <!-- Abstract Section -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Large Language Models (LLMs) are increasingly
+                            used for software development, but their
+                            reliability in generating secure code remains a
+                            critical concern.
+                            <strong>SecureCoder</strong> addresses these
+                            risks by introducing a comprehensive pipeline
+                            for security-aware code generation and
+                            evaluation.
+                        </p>
+                        <p>
+                            By leveraging security-first prompting and constraint decoding, <strong>SecureCoder</strong>
+                            bridges the gap between AI-driven code synthesis and robust software security. Our research
+                            focuses on training a security-aware generator model alongside a dedicated discriminator
+                            model
+                            designed to identify and critique potential vulnerabilities in the generated code.
+                        </p>
+                        <p>
+                            These innovations are implemented as a developer-friendly IDE plugin and a unified
+                            evaluation
+                            framework. The latter provides a CLI tool for rigorously testing models against industry
+                            benchmarks such as <strong>CWEval</strong>, <strong>SecCodePLT</strong>, and
+                            <strong>CyberSecEval</strong>.
+                        </p>
+                    </div>
+
+                    <h2 class="title is-4" style="margin-top: 2rem;">Objectives</h2>
+                    <div class="content has-text-justified">
+                        <ul>
+                            <li><strong>Identifying Security Risks in AI-Driven Code Generation:</strong> Highlighting
+                                limitations of LLMs in reliably detecting and mitigating vulnerabilities (e.g., buffer
+                                overflows, SQL injection), and addressing risks of over-reliance on AI tools.</li>
+                            <li><strong>Building Developer-Friendly Tools and Unified Benchmarks:</strong> Developing
+                                IDE plugins for generating and reviewing secure code, alongside a unified evaluation
+                                framework to test LLMs against industry-standard security benchmarks.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- JetBrains Plugin Section -->
-        <section class="section">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered">
-                    <div class="column is-full-width">
-                        <h2 class="title is-3 has-text-centered">
-                            JetBrains IDE Plugin
-                        </h2>
-                        <div class="content has-text-justified">
-                            <p>
-                                The SecureCoder JetBrains plugin brings security
-                                awareness directly into your IDE. It analyzes
-                                code suggestions in real-time, highlighting
-                                potential vulnerabilities and suggesting secure
-                                alternatives based on our
-                                <strong>security-first prompting</strong> and
-                                <strong>constraint decoding</strong> techniques.
-                            </p>
-                        </div>
-
-                        <!-- Demo Video Placeholder -->
-                        <div class="publication-video">
-                            <iframe
-                                src="https://www.youtube.com/embed/OVo9xiVlJsQ?rel=0&amp;showinfo=0"
-                                frameborder="0"
-                                allow="autoplay; encrypted-media"
-                                allowfullscreen
-                            ></iframe>
-                        </div>
-
-                        <div
-                            class="columns is-centered"
-                            style="margin-top: 20px"
-                        >
-                            <div class="column has-text-centered">
-                                <a
-                                    href="https://plugins.jetbrains.com/plugin/28916-securecoder"
-                                    class="external-link button is-medium is-rounded is-primary"
-                                >
-                                    <span class="icon">
-                                        <i class="fas fa-download"></i>
-                                    </span>
-                                    <span>Download Plugin</span>
-                                </a>
-                                <a
-                                    href="https://plugins.jetbrains.com/plugin/28916-securecoder"
-                                    class="external-link button is-medium is-rounded is-light"
-                                >
-                                    <span class="icon">
-                                        <i class="fas fa-book"></i>
-                                    </span>
-                                    <span>Documentation</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Benchmark CLI Tool Section -->
-        <section class="section">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered">
-                    <div class="column is-full-width">
-                        <h2 class="title is-3 has-text-centered">
-                            Benchmark CLI Tool
-                        </h2>
-                        <div class="content has-text-justified">
-                            <p>
-                                Evaluating the security of code generation
-                                models requires rigorous testing. Our
-                                <strong>Benchmark CLI Tool</strong> provides a
-                                unified interface to benchmark models from
-                                <strong>OpenRouter</strong> or local agents
-                                against state-of-the-art security datasets.
-                            </p>
-                        </div>
-
-                        <div class="columns is-vcentered">
-                            <div class="column is-6">
-                                <div class="content">
-                                    <h4 class="title is-4">Key Features</h4>
-                                    <ul>
-                                        <li>
-                                            <strong
-                                                >Multi-Model Support:</strong
-                                            >
-                                            Benchmark any model available on
-                                            OpenRouter or running locally.
-                                        </li>
-                                        <li>
-                                            <strong>Unified Evaluation:</strong>
-                                            Run benchmarks like
-                                            <a
-                                                href="https://arise-lab.github.io/cweval-bench/"
-                                                >CWEval</a
-                                            >,
-                                            <a
-                                                href="https://seccodeplt.github.io/"
-                                                >SecCodePLT</a
-                                            >, and
-                                            <a
-                                                href="https://github.com/facebookresearch/CyberSecEval"
-                                                >CyberSecEval</a
-                                            >
-                                            with a single command.
-                                        </li>
-                                        <li>
-                                            <strong
-                                                >Automated Reporting:</strong
-                                            >
-                                            Generate detailed reports on model
-                                            vulnerability rates.
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="has-text-centered">
-                                    <a
-                                        href="#"
-                                        class="external-link button is-normal is-rounded is-dark"
-                                    >
-                                        <span class="icon">
-                                            <i class="fas fa-terminal"></i>
-                                        </span>
-                                        <span>View on GitHub</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="column is-6">
-                                <!-- CLI Demo Video Placeholder -->
-                                <div
-                                    class="publication-video"
-                                    style="padding-bottom: 56.25%"
-                                >
-                                    <video
-                                        id="cli-video"
-                                        controls
-                                        playsinline
-                                        height="100%"
-                                    >
-                                        <!-- Replace with your actual video file -->
-                                        <source
-                                            src="./static/videos/cli_demo.mp4"
-                                            type="video/mp4"
-                                        />
-                                    </video>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Emerging Techniques Section (Optional based on proposal) -->
-        <section class="section has-background-light">
-            <div class="container is-max-desktop">
-                <h2 class="title is-3 has-text-centered">
-                    Powering Techniques
-                </h2>
-                <div class="columns is-centered">
-                    <div class="column is-4">
-                        <div class="box" style="height: 100%">
-                            <h4 class="title is-5">Graph Neural Networks</h4>
+    <!-- Products Section -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <h2 class="title is-3 has-text-centered">Products</h2>
+            <div class="columns is-centered">
+                <!-- JetBrains Plugin Card -->
+                <div class="column is-6">
+                    <div class="card" style="height: 100%; display: flex; flex-direction: column;">
+                        <div class="card-content" style="flex-grow: 1;">
+                            <h4 class="title is-4">JetBrains IDE Plugin</h4>
+                            <h6 class="subtitle is-6 has-text-grey" style="margin-bottom: 1rem;">IDE Integration</h6>
                             <div class="content">
-                                <p>
-                                    Integrates GNNs to model code structure at
-                                    the token level, improving the accuracy and
-                                    safety of generated code.
-                                </p>
+                                The SecureCoder JetBrains plugin brings security awareness directly into your IDE. It
+                                analyzes code suggestions in real-time, highlighting potential vulnerabilities and
+                                suggesting secure alternatives based on our security-first prompting and constraint
+                                decoding techniques.
                             </div>
                         </div>
+                        <footer class="card-footer">
+                            <a href="https://plugins.jetbrains.com/plugin/28916-securecoder"
+                                class="card-footer-item external-link">Download</a>
+                            <a href="jetbrains-plugin.html" class="card-footer-item">More Info</a>
+                        </footer>
                     </div>
-                    <div class="column is-4">
-                        <div class="box" style="height: 100%">
-                            <h4 class="title is-5">Symbolic Execution</h4>
+                </div>
+
+                <!-- Benchmark CLI Card -->
+                <div class="column is-6">
+                    <div class="card" style="height: 100%; display: flex; flex-direction: column;">
+                        <div class="card-content" style="flex-grow: 1;">
+                            <h4 class="title is-4">Benchmark CLI Tool</h4>
+                            <h6 class="subtitle is-6 has-text-grey" style="margin-bottom: 1rem;">Unified Evaluation</h6>
                             <div class="content">
-                                <p>
-                                    Combines symbolic execution with fine-tuning
-                                    to identify potential vulnerabilities during
-                                    the model training process.
-                                </p>
+                                A unified interface to rigorously evaluate the security of code generation models.
+                                Benchmark models from OpenRouter or local agents against state-of-the-art security
+                                datasets like CWEval, SecCodePLT, and CyberSecEval.
                             </div>
                         </div>
-                    </div>
-                    <div class="column is-4">
-                        <div class="box" style="height: 100%">
-                            <h4 class="title is-5">Obfuscation Grounding</h4>
-                            <div class="content">
-                                <p>
-                                    Enhances model resilience by incorporating
-                                    obfuscation techniques into pre-training to
-                                    reduce the risk of generating insecure code.
-                                </p>
-                            </div>
-                        </div>
+                        <footer class="card-footer">
+                            <a href="https://github.com/SecureCoder-Project"
+                                class="card-footer-item external-link">Download</a>
+                            <a href="cli-tool.html" class="card-footer-item">More Info</a>
+                        </footer>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <footer class="footer">
-            <div class="container">
-                <div class="content has-text-centered">
-                    <a
-                        class="icon-link"
-                        href="#"
-                        class="external-link"
-                        disabled
-                    >
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-                <div class="columns is-centered">
-                    <div class="column is-8">
+    <!-- Emerging Techniques Section (Optional based on proposal) -->
+    <section class="section has-background-light">
+        <div class="container is-max-desktop">
+            <h2 class="title is-3 has-text-centered">
+                Powering Techniques
+            </h2>
+            <div class="columns is-multiline is-centered">
+                <div class="column is-4">
+                    <div class="box" style="height: 100%">
+                        <h4 class="title is-5">Graph Neural Networks</h4>
                         <div class="content">
                             <p>
-                                Website content copyright &copy;
-                                <a href="https://www.stg.tu-darmstadt.de"
-                                    >STG-TuDA</a
-                                >.
+                                Integrates GNNs to model code structure at
+                                the token level, improving the accuracy and
+                                safety of generated code. (Tiftikci & Mezini, 2025)
                             </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="box" style="height: 100%">
+                        <h4 class="title is-5">Symbolic Execution</h4>
+                        <div class="content">
                             <p>
-                                This page is adapted from
-                                <a
-                                    href="https://github.com/nerfies/nerfies.github.io"
-                                    >Nerfies</a
-                                >
-                                by Keunhong Park et al. Licensed under a
-                                <a
-                                    rel="license"
-                                    href="http://creativecommons.org/licenses/by-sa/4.0/"
-                                    >Creative Commons Attribution-ShareAlike 4.0
-                                    International License</a
-                                >.
+                                Combines symbolic execution with fine-tuning
+                                to identify potential vulnerabilities during
+                                the model training process. (Sakharova et al., 2025)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="box" style="height: 100%">
+                        <h4 class="title is-5">Obfuscation Grounding</h4>
+                        <div class="content">
+                            <p>
+                                Enhances model resilience by incorporating
+                                obfuscation techniques into pre-training to
+                                reduce the risk of generating insecure code. (Paul et al., 2025)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="box" style="height: 100%">
+                        <h4 class="title is-5">Hybrid Approaches</h4>
+                        <div class="content">
+                            <p>
+                                Combines LLMs with formal verification tools (e.g., symbolic execution) and GNNs to
+                                address security gaps in code generation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="box" style="height: 100%">
+                        <h4 class="title is-5">Prompt Engineering</h4>
+                        <div class="content">
+                            <p>
+                                Improves LLM reasoning capabilities through structured prompting approaches like
+                                Chain-of-Thought, aiding in the identification of security flaws. (Wei et al., 2022)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="box" style="height: 100%">
+                        <h4 class="title is-5">Formal Verification & Benchmarking</h4>
+                        <div class="content">
+                            <p>
+                                Explores emerging frameworks to merge formal verification with LLMs, and relies on
+                                standardized datasets (like SecurityEvalDataset) for cross-model comparisons.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>
-    </body>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <a class="icon-link" href="#" class="external-link" disabled>
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p>
+                            Website content copyright &copy;
+                            <a href="https://www.stg.tu-darmstadt.de">STG-TuDA</a>.
+                        </p>
+                        <p>
+                            This page is adapted from
+                            <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+                            by Keunhong Park et al. Licensed under a
+                            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+                                Attribution-ShareAlike 4.0
+                                International License</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
 </html>
