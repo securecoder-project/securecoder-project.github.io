@@ -298,6 +298,51 @@ ul { list-style: none; }
   border-radius: 999px;
   margin-bottom: 1rem;
   border: 1px solid var(--accent-muted);
+  transition: background var(--transition), border-color var(--transition);
+}
+a.hero-badge:hover {
+  background: var(--accent-muted);
+  border-color: var(--accent);
+  color: var(--accent-active);
+}
+
+.hero-affiliations {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+.affil-logo {
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.82;
+  transition: opacity var(--transition), transform var(--transition);
+}
+.affil-logo:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+.affil-logo img {
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+/* ATHENE logo has little inner whitespace — keep it compact */
+.affil-logo .logo-athene {
+  height: 42px;
+}
+/* TU Darmstadt SVG has ~25% whitespace margin baked into its viewBox,
+   so we render it taller so the visible content matches ATHENE's size */
+.affil-logo .logo-tuda {
+  height: 68px;
+}
+.affil-sep {
+  display: inline-block;
+  width: 1px;
+  height: 32px;
+  background: var(--border-subtle);
+  flex-shrink: 0;
 }
 
 .hero-title {
@@ -768,6 +813,7 @@ ul { list-style: none; }
 @media (max-width: 820px) {
   .hero-content { flex-direction: column; text-align: center; gap: 2.5rem; }
   .hero-links { justify-content: center; }
+  .hero-affiliations { justify-content: center; }
   .hero-visual { width: 100%; display: flex; justify-content: center; }
   .hero-card-stack { width: 280px; }
   .research-grid, .products-grid { grid-template-columns: 1fr; }
