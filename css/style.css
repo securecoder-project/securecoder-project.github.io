@@ -434,6 +434,11 @@ a.hero-badge:hover {
   border: 2px solid var(--bg-subtle);
 }
 .news-item:last-child { border-bottom: none; }
+.news-actions {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: center;
+}
 
 .news-date {
   flex: 0 0 72px;
@@ -648,6 +653,11 @@ a.hero-badge:hover {
   background: var(--bg-subtle);
   border-radius: 999px;
   padding: 0.16rem 0.58rem;
+}
+.pub-actions {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: center;
 }
 
 /* ==========================================================================
