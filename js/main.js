@@ -44,6 +44,29 @@ function highlightNav() {
 window.addEventListener('scroll', highlightNav, { passive: true });
 highlightNav();
 
+// Install command tabs
+const installTabs = document.querySelectorAll('.install-tabs [role="tab"]');
+
+function selectInstallTab(tab) {
+  installTabs.forEach(other => {
+    const selected = other === tab;
+    other.setAttribute('aria-selected', selected);
+    other.tabIndex = selected ? 0 : -1;
+    document.getElementById(other.getAttribute('aria-controls')).hidden = !selected;
+  });
+}
+
+installTabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => selectInstallTab(tab));
+  tab.addEventListener('keydown', event => {
+    if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+    const step = event.key === 'ArrowRight' ? 1 : -1;
+    const next = installTabs[(index + step + installTabs.length) % installTabs.length];
+    selectInstallTab(next);
+    next.focus();
+  });
+});
+
 // News: load and render entries from a JSON file.
 const newsList = document.getElementById('newsList');
 
@@ -59,8 +82,19 @@ function escapeHtml(value) {
     .replaceAll("'", '&#39;');
 }
 
+// LaTeX accent commands mapped to Unicode combining marks, e.g. {\v{s}} -> š
+const bibAccents = {
+  '`': '̀', "'": '́', '^': '̂', '~': '̃', '=': '̄',
+  '.': '̇', '"': '̈', v: '̌', c: '̧',
+};
+
 function stripBibBraces(value) {
-  return value.replace(/[{}]/g, '').replace(/\s+/g, ' ').trim();
+  return value
+    .replace(/\\([`'^~=."vc])\s*\{?([a-zA-Z])\}?/g, (_, accent, letter) => letter + bibAccents[accent])
+    .normalize('NFC')
+    .replace(/[{}]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function normalizeAuthors(authorField) {

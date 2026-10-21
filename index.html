@@ -9,7 +9,7 @@
         />
         <meta
             name="keywords"
-            content="SecureCoder, secure code generation, LLM, security, TU Darmstadt, benchmarking"
+            content="SecureCoder, secure code generation, LLM, coding agents, security, TU Darmstadt"
         />
         <title>SecureCoder, Security-Aware Code Generation</title>
 
@@ -81,20 +81,20 @@
                             development, but their ability to generate
                             <em>secure</em> code remains an open challenge.
                             SecureCoder is a collaborative research initiative
-                            at TU Darmstadt that tackles this problem
-                            end-to-end: from curating security-focused training
-                            data and building robust evaluation benchmarks, to
-                            training security-aware models and deploying
-                            constraint-based decoding techniques that prevent
-                            vulnerabilities at generation time.
+                            at TU Darmstadt that works on this problem at the
+                            level of the model and at the level of the agent:
+                            efficient code models built on state space and
+                            diffusion architectures, reinforcement learning
+                            from verifiable rewards, and security checks built
+                            into the loop of coding agents.
                         </p>
                         <p class="hero-desc">
                             Our work brings together expertise in programming
                             languages, natural language processing, and machine
                             learning to produce developer-friendly tools,
-                            including an IDE plugin and a unified benchmarking
-                            CLI, that raise the bar for safe AI-assisted
-                            development.
+                            including a plugin for coding agents such as Claude
+                            Code and Codex and a JetBrains IDE plugin, that
+                            raise the bar for safe AI-assisted development.
                         </p>
                         <div class="hero-links">
                             <a
@@ -139,38 +139,25 @@
                             </a>
                         </div>
                     </div>
-                    <div class="hero-visual">
-                        <div class="hero-card-stack">
-                            <div class="hero-stat-card">
-                                <div class="hero-stat-icon">
-                                    <i class="fas fa-database"></i>
-                                </div>
-                                <div class="hero-stat-label">Data Curation</div>
+                    <figure class="hero-visual hero-figure">
+                        <div class="diff" role="img" aria-label="Code diff: an agent's SQL query built with an f-string is flagged as CWE-89 SQL injection and replaced with a parameterized query.">
+                            <div class="diff-file">
+                                <i class="fas fa-shield-halved"></i> app/users.py
                             </div>
-                            <div class="hero-stat-card">
-                                <div class="hero-stat-icon">
-                                    <i class="fas fa-brain"></i>
-                                </div>
-                                <div class="hero-stat-label">
-                                    Model Training
-                                </div>
-                            </div>
-                            <div class="hero-stat-card">
-                                <div class="hero-stat-icon">
-                                    <i class="fas fa-lock"></i>
-                                </div>
-                                <div class="hero-stat-label">
-                                    Constraint Decoding
-                                </div>
-                            </div>
-                            <div class="hero-stat-card">
-                                <div class="hero-stat-icon">
-                                    <i class="fas fa-chart-bar"></i>
-                                </div>
-                                <div class="hero-stat-label">Benchmarking</div>
-                            </div>
+                            <pre class="diff-body" aria-hidden="true"><code><span class="ln">def find_user(cur, uid):</span>
+<span class="ln ln-del">    cur.execute(f"SELECT * FROM users WHERE id={uid}")</span>
+<span class="ln ln-add">    cur.execute("SELECT * FROM users WHERE id=%s", (uid,))</span>
+<span class="ln">    return cur.fetchone()</span></code></pre>
+                            <p class="diff-finding" aria-hidden="true">
+                                <span class="finding-rule">CWE-89</span>
+                                <span>SQL injection, flagged by semgrep right after the agent's edit. Fixed and re-checked.</span>
+                            </p>
                         </div>
-                    </div>
+                        <figcaption>
+                            What the SecureCoder plugin does each time a coding
+                            agent edits a file.
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
@@ -206,98 +193,49 @@
                 <div class="section-header">
                     <h2 class="section-heading">Research</h2>
                     <p class="section-sub">
-                        Four interconnected pillars of security-aware code
-                        generation
+                        Three lines of work, from the model architecture up to
+                        the agent that uses it
                     </p>
                 </div>
                 <div class="research-grid">
                     <div class="research-card">
                         <div class="research-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h3>Data Creation &amp; Curation</h3>
-                        <p>
-                            High-quality security data is the foundation of
-                            everything we do. We design systematic pipelines to
-                            collect, annotate, and curate code samples that
-                            exhibit real-world vulnerabilities, covering CWE
-                            classes such as buffer overflows, SQL injection,
-                            path traversal, and more. By building standardized,
-                            reproducible datasets we enable rigorous cross-model
-                            comparison and reproducible research across the
-                            community.
-                        </p>
-                        <ul class="research-tags">
-                            <li>CWE Annotation</li>
-                            <li>Dataset Benchmarking</li>
-                            <li>SecurityEvalDataset</li>
-                        </ul>
-                    </div>
-
-                    <div class="research-card">
-                        <div class="research-icon">
                             <i class="fas fa-brain"></i>
                         </div>
-                        <h3>Model Training</h3>
+                        <h3>Model Training: State Space &amp; Diffusion Models</h3>
                         <p>
-                            We develop training regimes that embed security
-                            awareness directly into language models. This
-                            includes fine-tuning with symbolic execution
-                            feedback to identify vulnerabilities at training
-                            time, GNN-augmented pre-training that models code
-                            graph structure for improved accuracy, and
-                            obfuscation grounding to enhance model robustness
-                            against adversarial or insecure patterns.
+                            We train State Space Models for code, which scale
+                            linearly with context length and use far less memory
+                            than transformers, and Diffusion Language Models,
+                            which generate code in parallel and can enforce
+                            constraints during generation.
                         </p>
-                        <ul class="research-tags">
-                            <li>Symbolic Execution</li>
-                            <li>GNN-Augmented Pre-training</li>
-                            <li>Obfuscation Grounding</li>
-                        </ul>
                     </div>
 
                     <div class="research-card">
                         <div class="research-icon">
-                            <i class="fas fa-lock"></i>
+                            <i class="fas fa-arrows-rotate"></i>
                         </div>
-                        <h3>Constraint Decoding</h3>
+                        <h3>Off-Policy RL with Verifiable Rewards</h3>
                         <p>
-                            Rather than relying solely on post-hoc filtering, we
-                            integrate security constraints directly into the
-                            decoding process. A dedicated discriminator model
-                            critiques generated code in real time, steering the
-                            generator away from known vulnerability patterns.
-                            This approach combines security-first prompting with
-                            formal verification principles to guarantee
-                            structural safety properties during generation.
+                            Tests, compilers, and static analyzers give a reward
+                            signal without human annotation. We develop novel
+                            off-policy RLVR algorithms for diffusion language
+                            models, with dense, token-level rewards.
                         </p>
-                        <ul class="research-tags">
-                            <li>Discriminator Models</li>
-                            <li>Formal Verification</li>
-                            <li>Security-First Prompting</li>
-                        </ul>
                     </div>
 
                     <div class="research-card">
                         <div class="research-icon">
-                            <i class="fas fa-chart-bar"></i>
+                            <i class="fas fa-robot"></i>
                         </div>
-                        <h3>IDE &amp; Benchmarking</h3>
+                        <h3>Agentic Code Generation for Security</h3>
                         <p>
-                            Our research is deployed as practical tools: a
-                            JetBrains IDE plugin that highlights vulnerabilities
-                            and suggests secure alternatives in real time, and a
-                            unified CLI benchmarking framework for evaluating
-                            any model against industry-standard security suites
-                            including CWEval, SecCodePLT, and CyberSecEval. Both
-                            tools are openly released for use by the broader
-                            research community.
+                            We build multi-agent systems in which generator and
+                            verifier agents check each other's work, and wire
+                            static analysis directly into the loop of coding
+                            agents.
                         </p>
-                        <ul class="research-tags">
-                            <li>JetBrains Plugin</li>
-                            <li>CWEval / SecCodePLT</li>
-                            <li>Unified CLI</li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -321,12 +259,18 @@
                         <div class="product-label">IDE Integration</div>
                         <h3>JetBrains IDE Plugin</h3>
                         <p>
-                            Brings security awareness directly into your
-                            development environment. The plugin analyzes code
-                            suggestions in real time, highlights potential
-                            vulnerabilities, and proposes secure alternatives,
-                            powered by our constraint decoding and
-                            security-first prompting techniques.
+                            A coding agent that runs inside IntelliJ IDEA and
+                            other JetBrains IDEs. Describe a change, and the
+                            agent generates the code, checks it with security
+                            critics (an LLM reviewer, CodeQL, and a CWE
+                            knowledge base), and repairs it before showing you
+                            the proposal. Each edit appears as a diff you
+                            review and apply yourself; nothing is written until
+                            you do. Model, provider, and critics are
+                            configurable. On <strong>CWEval</strong>, the
+                            knowledge-base
+                            critic raised the number of secure and functional
+                            solutions from 83 to 89 out of 119.
                         </p>
                         <div class="product-actions">
                             <a
@@ -337,40 +281,51 @@
                             >
                                 <i class="fas fa-download"></i> Download
                             </a>
-                            <a
-                                href="jetbrains-plugin.html"
-                                class="btn btn-outline"
-                                >More Info</a
-                            >
                         </div>
                     </div>
 
                     <div class="product-card">
                         <div class="product-icon">
-                            <i class="fas fa-terminal"></i>
+                            <i class="fas fa-robot"></i>
                         </div>
-                        <div class="product-label">Unified Evaluation</div>
-                        <h3>Benchmark CLI Tool</h3>
+                        <div class="product-label">Agent Harnesses</div>
+                        <h3>SecureCoder Plugin for Coding Agents</h3>
                         <p>
-                            A unified command-line interface for rigorously
-                            evaluating the security posture of code generation
-                            models. Benchmark any model from OpenRouter or a
-                            local agent against industry-standard security
-                            suites including <strong>CWEval</strong>,
-                            <strong>SecCodePLT</strong>, and
-                            <strong>CyberSecEval</strong> , all in one tool.
+                            Brings security checks into the loop of coding
+                            agents such as <strong>Claude Code</strong>,
+                            <strong>Codex</strong>, Cursor, and OpenCode, with
+                            skills and MCP tools for GitHub Copilot, VS Code,
+                            and Kiro. It adds secure-coding constraints to the
+                            agent's prompt, scans every edited file with syntax
+                            checks, semgrep, and bandit (CodeQL on demand), and
+                            guides the agent through fixing and re-checking its
+                            findings. All analysis runs locally.
                         </p>
+                        <div class="install">
+                            <div class="install-tabs" role="tablist" aria-label="Install command">
+                                <button role="tab" id="tab-claude" aria-controls="panel-claude" aria-selected="true">Claude Code</button>
+                                <button role="tab" id="tab-codex" aria-controls="panel-codex" aria-selected="false" tabindex="-1">Codex</button>
+                            </div>
+                            <pre class="install-panel" role="tabpanel" id="panel-claude" aria-labelledby="tab-claude" tabindex="0"><code>/plugin marketplace add securecoder-project/securecoder-plugin
+/plugin install securecoder@securecoder</code></pre>
+                            <pre class="install-panel" role="tabpanel" id="panel-codex" aria-labelledby="tab-codex" tabindex="0" hidden><code>codex plugin marketplace add securecoder-project/securecoder-plugin
+codex plugin add securecoder@securecoder</code></pre>
+                        </div>
                         <div class="product-actions">
                             <a
-                                href="https://github.com/SecureCoder-Project"
+                                href="https://github.com/securecoder-project/securecoder-plugin"
                                 class="btn btn-primary"
                                 target="_blank"
                                 rel="noopener"
                             >
                                 <i class="fab fa-github"></i> GitHub
                             </a>
-                            <a href="cli-tool.html" class="btn btn-outline"
-                                >More Info</a
+                            <a
+                                href="https://github.com/securecoder-project/securecoder-plugin/blob/main/INSTALL.md"
+                                class="btn btn-outline"
+                                target="_blank"
+                                rel="noopener"
+                                >Other Agents</a
                             >
                         </div>
                     </div>
