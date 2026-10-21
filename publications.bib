@@ -41,7 +41,7 @@
     doi = "10.18653/v1/2025.emnlp-main.1735",
     pages = "34219--34235",
     ISBN = "979-8-89176-332-6",
-    abstract = "Although transformers dominate many code-specific tasks, they have significant limitations. This paper explores State Space Models (SSMs) as a promising alternative for code understanding tasks such as retrieval, classification, and clone detection. We introduce CodeSSM, the first SSM-based model trained on code corpora to assess its effectiveness. Our results demonstrate that SSMs are more sample-efficient and can extrapolate to longer contexts beyond the pretraining length. Extensive experiments show that SSMs offer a viable alternative to transformers, addressing several their limitations. Additionally, CodeSSM reduces memory usage by up to 64{\%} compared to transformers at a context length of 2048, with greater savings as context length grows.The code is available [here](https://github.com/abx04/CodeSSM)."
+    abstract = "Although transformers dominate many code-specific tasks, they have significant limitations. This paper explores State Space Models (SSMs) as a promising alternative for code understanding tasks such as retrieval, classification, and clone detection. We introduce CodeSSM, the first SSM-based model trained on code corpora to assess its effectiveness. Our results demonstrate that SSMs are more sample-efficient and can extrapolate to longer contexts beyond the pretraining length. Extensive experiments show that SSMs offer a viable alternative to transformers, addressing several their limitations. Additionally, CodeSSM reduces memory usage by up to 64% compared to transformers at a context length of 2048, with greater savings as context length grows.The code is available at https://github.com/abx04/CodeSSM."
 }
 
 @inproceedings{anand2026post-transformer-vision,
@@ -49,7 +49,7 @@
   author = {Abhinav Anand and Shweta Verma and Daniel Maninger and Mert Tiftikci and Amir Molzam and Tobias Reinhard and Mira Mezini},
   year = {2026},
   booktitle = {AI Summit '26},
-  abstract = {Transformer-based autoregressive language models are approaching fundamental limits in memory efficiency, long-context reasoning, and post training alignment — precisely the properties most critical for deployment in engineering and scientific domains. We argue that addressing these limitations requires a shift from the dominant paradigm, and propose an efficient, reliable multi-agent AI system integrating State Space Models (SSMs), Diffusion Language Modeling (DLM), and novel off-policy Reinforcement Learning with Verifiable Reward (RLVR) algorithms designed specifically for DLM. Our system incorporates four interlocking advances: (1)~SSM architectures for linear-scaling computation, memory efficiency, and long-context extrapolation; (2)~DLM for parallel, iterative generation with constraint-based guarantees; (3)~off-policy RLVR for scalable alignment without human annotation bottlenecks; and (4)~multi-agent orchestration with retriever, generator, and verifier agents built on a shared SSM foundation with verifiable guardrails. We identify software engineering as the ideal proving ground — its executable, machine-checkable feedback signals provide the training substrate needed to validate this architecture — before extending to broader engineering and scientific domains.},
+  abstract = {Transformer-based autoregressive language models are approaching fundamental limits in memory efficiency, long-context reasoning, and post training alignment — precisely the properties most critical for deployment in engineering and scientific domains. We argue that addressing these limitations requires a shift from the dominant paradigm, and propose an efficient, reliable multi-agent AI system integrating State Space Models (SSMs), Diffusion Language Modeling (DLM), and novel off-policy Reinforcement Learning with Verifiable Reward (RLVR) algorithms designed specifically for DLM. Our system incorporates four interlocking advances: (1) SSM architectures for linear-scaling computation, memory efficiency, and long-context extrapolation; (2) DLM for parallel, iterative generation with constraint-based guarantees; (3) off-policy RLVR for scalable alignment without human annotation bottlenecks; and (4) multi-agent orchestration with retriever, generator, and verifier agents built on a shared SSM foundation with verifiable guardrails. We identify software engineering as the ideal proving ground — its executable, machine-checkable feedback signals provide the training substrate needed to validate this architecture — before extending to broader engineering and scientific domains.},
   keywords = {state space models, diffusion language models, off-policy RLVR, multi-agent systems, AI for software engineering},
 }
 
@@ -74,8 +74,7 @@
     abstract = "Search-based dialog models typically re-encode the dialog history at every turn, incurring high cost.Curved Contrastive Learning, a representation learning method that encodes relative distances between utterances into the embedding space via a bi-encoder, has recently shown promising results for dialog modeling at far superior efficiency.While high efficiency is achieved through independently encoding utterances, this ignores the importance of contextualization. To overcome this issue, this study introduces triple-encoders, which efficiently compute distributed utterance mixtures from these independently encoded utterances through a novel hebbian inspired co-occurrence learning objective in a self-organizing manner, without using any weights, i.e., merely through local interactions. Empirically, we find that triple-encoders lead to a substantial improvement over bi-encoders, and even to better zero-shot generalization than single-vector representation models without requiring re-encoding. Our code (https://github.com/UKPLab/acl2024-triple-encoders) and model (https://huggingface.co/UKPLab/triple-encoders-dailydialog) are publicly available."
 }
 
-@inproceedings{
-paul2025obscuracoder,
+@inproceedings{paul2025obscuracoder,
 title={ObscuraCoder: Powering Efficient Code {LM} Pre-Training Via Obfuscation Grounding},
 author={Indraneil Paul and Haoyi Yang and Goran Glava{\v{s}} and Kristian Kersting and Iryna Gurevych},
 booktitle={The Thirteenth International Conference on Learning Representations},
@@ -99,7 +98,7 @@ url={https://openreview.net/forum?id=VYvxrD7aS0}
     url = "https://aclanthology.org/2024.acl-long.802/",
     doi = "10.18653/v1/2024.acl-long.802",
     pages = "15023--15041",
-    abstract = "Code generation has fast become one of the most popular applications of language models (LMs). Nonetheless, research on multilingual aspects of Code-LMs, such as cross-lingual transfer between different programming languages, language-specific data augmentation, and post-hoc LM adaptation, alongside the exploitation of data sources other than the original textual content, has been much sparser than for their natural language counterparts. In particular, most mainstream Code-LMs have been pre-trained on source code files alone. In this work, we investigate the prospect of leveraging readily available compiler intermediate representations (IR){---}shared across programming languages{---}to improve the multilingual capabilities of Code-LMs and facilitate cross-lingual transfer. To this end, we first compile SLTrans, a parallel dataset consisting of nearly 4M self-contained source code files coupled with their respective intermediate representations. Next, starting from various base Code-LMs (ranging from 1.1B to 7.3B parameters), we carry out continued causal language modelling training on SLTrans, forcing the Code-LMs to (1) learn the IR language and (2) align the IR constructs with respective constructs of various programming languages. Our resulting models, dubbed IRCoder, display sizeable and consistent gains across various code generation tasks and metrics, including prompt robustness, multilingual code completion, code understanding, and instruction following."
+    abstract = "Code generation has fast become one of the most popular applications of language models (LMs). Nonetheless, research on multilingual aspects of Code-LMs, such as cross-lingual transfer between different programming languages, language-specific data augmentation, and post-hoc LM adaptation, alongside the exploitation of data sources other than the original textual content, has been much sparser than for their natural language counterparts. In particular, most mainstream Code-LMs have been pre-trained on source code files alone. In this work, we investigate the prospect of leveraging readily available compiler intermediate representations (IR)—shared across programming languages—to improve the multilingual capabilities of Code-LMs and facilitate cross-lingual transfer. To this end, we first compile SLTrans, a parallel dataset consisting of nearly 4M self-contained source code files coupled with their respective intermediate representations. Next, starting from various base Code-LMs (ranging from 1.1B to 7.3B parameters), we carry out continued causal language modelling training on SLTrans, forcing the Code-LMs to (1) learn the IR language and (2) align the IR constructs with respective constructs of various programming languages. Our resulting models, dubbed IRCoder, display sizeable and consistent gains across various code generation tasks and metrics, including prompt robustness, multilingual code completion, code understanding, and instruction following."
 }
 
 @inproceedings{li-etal-2023-python,
@@ -200,7 +199,7 @@ location = {Lisbon, Portugal},
 series = {ICSE-NIER'24}
 }
 
-@inproceedings {277196,
+@inproceedings{277196,
 author = {Nikolaos Alexopoulos and Manuel Brack and Jan Philipp Wagner and Tim Grube and Max M{\"u}hlh{\"a}user},
 title = {How Long Do Vulnerabilities Live in the Code? A {Large-Scale} Empirical Measurement Study on {FOSS} Vulnerability Lifetimes},
 booktitle = {31st USENIX Security Symposium (USENIX Security 22)},
@@ -262,7 +261,7 @@ year = {2024},
 isbn = {9798331314385},
 publisher = {Curran Associates Inc.},
 address = {Red Hook, NY, USA},
-abstract = {Graph Neural Networks (GNNs) are non-Euclidean deep learning models for graph-structured data. Despite their successful and diverse applications, oversmoothing prohibits deep architectures due to node features converging to a single fixed point. This severely limits their potential to solve complex tasks. To counteract this tendency, we propose a plug-and-play module consisting of three steps: Cluster → Normalize → Activate (CNA). By applying CNA modules, GNNs search and form super nodes in each layer, which are normalized and activated individually. We demonstrate in node classification and property prediction tasks that CNA significantly improves the accuracy over the state-of-the-art. Particularly, CNA reaches 94.18\% and 95.75\% accuracy on Cora and CiteSeer, respectively. It further benefits GNNs in regression tasks as well, reducing the mean squared error compared to all baselines. At the same time, GNNs with CNA require substantially fewer learnable parameters than competing architectures.},
+abstract = {Graph Neural Networks (GNNs) are non-Euclidean deep learning models for graph-structured data. Despite their successful and diverse applications, oversmoothing prohibits deep architectures due to node features converging to a single fixed point. This severely limits their potential to solve complex tasks. To counteract this tendency, we propose a plug-and-play module consisting of three steps: Cluster → Normalize → Activate (CNA). By applying CNA modules, GNNs search and form super nodes in each layer, which are normalized and activated individually. We demonstrate in node classification and property prediction tasks that CNA significantly improves the accuracy over the state-of-the-art. Particularly, CNA reaches 94.18% and 95.75% accuracy on Cora and CiteSeer, respectively. It further benefits GNNs in regression tasks as well, reducing the mean squared error compared to all baselines. At the same time, GNNs with CNA require substantially fewer learnable parameters than competing architectures.},
 booktitle = {Proceedings of the 38th International Conference on Neural Information Processing Systems},
 articleno = {2535},
 numpages = {24},
@@ -270,12 +269,13 @@ location = {Vancouver, BC, Canada},
 series = {NIPS '24}
 }
 
-@inproceedings{
-jolfaei2026domainadaptable,
+@inproceedings{jolfaei2026domainadaptable,
 title={Domain-Adaptable Reinforcement Learning for Code Generation with Dense Rewards},
 author={Erfan Aghadavoodi Jolfaei and Daniel Maninger and Abhinav Anand and Mert Tiftikci and Mira Mezini},
 booktitle={Deep Learning for Code: Towards Human-Centered Coding Agents},
 year={2026},
+abstract = {A reinforcement learning framework with multiple, customizable, token-level rewards for code generation, applied to general-purpose Python code generation and robotic program synthesis.},
+keywords = {LLMs, RL, PPO, Code Generation, Robotics},
 url={https://openreview.net/forum?id=0bwoOSnBA3}
 }
 
