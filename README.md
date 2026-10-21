@@ -44,6 +44,3 @@ Template:
 }
 ```
 
-## Acknowledgements
-
-This website's template is adapted from the [Nerfies](https://nerfies.github.io/) website.
