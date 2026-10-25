@@ -1,12 +1,17 @@
 [
   {
+    "sortDate": "2026-10-26",
+    "dateLabel": "Oct 2026",
+    "text": "The SecoreCoder project is being showcased as part of the ATHENE program at it-sa Expo&Congress, Europe's leading trade fair for IT security. Visit us in Hall 6, Booth 416 at the NürnbergMesse exhibition centre in Nuremberg, Germany."
+  },
+  {
     "sortDate": "2026-08-21",
-    "dateLabel": "August 2026",
+    "dateLabel": "Aug 2026",
     "text": "Two papers are accepted at EMNLP 2026 to be held in Budapest."
   },
   {
     "sortDate": "2026-08-20",
-    "dateLabel": "August 2026",
+    "dateLabel": "Aug 2026",
     "text": "Our team attends ACM AI Summit 2026 with the paper \"A Post-Transformer Vision for Efficient and Aligned AI in Software Engineering. \""
   },
   {
