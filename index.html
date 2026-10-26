@@ -51,7 +51,18 @@
                     <li><a href="#products">Products</a></li>
                     <li><a href="#publications">Publications</a></li>
                     <li><a href="#team">Team</a></li>
-                    <li><a href="https://www.st.informatik.tu-darmstadt.de/" target="_blank" rel="noopener" class="nav-cta">STG Lab <i class="fas fa-arrow-up-right-from-square nav-ext-icon"></i></a></li>
+                    <li>
+                        <a
+                            href="https://www.st.informatik.tu-darmstadt.de/"
+                            target="_blank"
+                            rel="noopener"
+                            class="nav-cta"
+                            >STG Lab
+                            <i
+                                class="fas fa-arrow-up-right-from-square nav-ext-icon"
+                            ></i
+                        ></a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -84,9 +95,9 @@
                             at TU Darmstadt that works on this problem at the
                             level of the model and at the level of the agent:
                             efficient code models built on state space and
-                            diffusion architectures, reinforcement learning
-                            from verifiable rewards, and security checks built
-                            into the loop of coding agents.
+                            diffusion architectures, reinforcement learning from
+                            verifiable rewards, and security checks built into
+                            the loop of coding agents.
                         </p>
                         <p class="hero-desc">
                             Our work brings together expertise in programming
@@ -140,17 +151,29 @@
                         </div>
                     </div>
                     <figure class="hero-visual hero-figure">
-                        <div class="diff" role="img" aria-label="Code diff: an agent's SQL query built with an f-string is flagged as CWE-89 SQL injection and replaced with a parameterized query.">
+                        <div
+                            class="diff"
+                            role="img"
+                            aria-label="Code diff: an agent's SQL query built with an f-string is flagged as CWE-89 SQL injection and replaced with a parameterized query."
+                        >
                             <div class="diff-file">
-                                <i class="fas fa-shield-halved"></i> app/users.py
+                                <i class="fas fa-shield-halved"></i>
+                                app/users.py
                             </div>
-                            <pre class="diff-body" aria-hidden="true"><code><span class="ln">def find_user(cur, uid):</span>
+                            <pre
+                                class="diff-body"
+                                aria-hidden="true"
+                            ><code><span class="ln">def find_user(cur, uid):</span>
 <span class="ln ln-del">    cur.execute(f"SELECT * FROM users WHERE id={uid}")</span>
 <span class="ln ln-add">    cur.execute("SELECT * FROM users WHERE id=%s", (uid,))</span>
 <span class="ln">    return cur.fetchone()</span></code></pre>
                             <p class="diff-finding" aria-hidden="true">
                                 <span class="finding-rule">CWE-89</span>
-                                <span>SQL injection, flagged by semgrep right after the agent's edit. Fixed and re-checked.</span>
+                                <span
+                                    >SQL injection, flagged by semgrep right
+                                    after the agent's edit. Fixed and
+                                    re-checked.</span
+                                >
                             </p>
                         </div>
                         <figcaption>
@@ -202,13 +225,16 @@
                         <div class="research-icon">
                             <i class="fas fa-brain"></i>
                         </div>
-                        <h3>Model Training: State Space &amp; Diffusion Models</h3>
+                        <h3>
+                            Model Training: State Space &amp; Diffusion Models
+                        </h3>
                         <p>
                             We train State Space Models for code, which scale
-                            linearly with context length and use far less memory
-                            than transformers, and Diffusion Language Models,
-                            which generate code in parallel and can enforce
-                            constraints during generation.
+                            linearly with context length, and Diffusion Language
+                            Models, which generate code in parallel and can
+                            enforce constraints during generation. We also
+                            explore training on data filtered for secure code,
+                            so that models learn secure patterns from the start.
                         </p>
                     </div>
 
@@ -219,7 +245,8 @@
                         <h3>Off-Policy RL with Verifiable Rewards</h3>
                         <p>
                             Tests, compilers, and static analyzers give a reward
-                            signal without human annotation. We develop novel
+                            signal without human annotation, one that can
+                            penalize vulnerable code directly. We develop novel
                             off-policy RLVR algorithms for diffusion language
                             models, with dense, token-level rewards.
                         </p>
@@ -233,8 +260,9 @@
                         <p>
                             We build multi-agent systems in which generator and
                             verifier agents check each other's work, and wire
-                            static analysis directly into the loop of coding
-                            agents.
+                            static analysis and CWE knowledge directly into the
+                            loop of coding agents, so vulnerabilities are caught
+                            and repaired before the code reaches the developer.
                         </p>
                     </div>
                 </div>
@@ -264,13 +292,9 @@
                             agent generates the code, checks it with security
                             critics (an LLM reviewer, CodeQL, and a CWE
                             knowledge base), and repairs it before showing you
-                            the proposal. Each edit appears as a diff you
-                            review and apply yourself; nothing is written until
-                            you do. Model, provider, and critics are
-                            configurable. On <strong>CWEval</strong>, the
-                            knowledge-base
-                            critic raised the number of secure and functional
-                            solutions from 83 to 89 out of 119.
+                            the proposal. Each edit appears as a diff you review
+                            and apply yourself; nothing is written until you do.
+                            Model, provider, and critics are configurable.
                         </p>
                         <div class="product-actions">
                             <a
@@ -302,13 +326,45 @@
                             findings. All analysis runs locally.
                         </p>
                         <div class="install">
-                            <div class="install-tabs" role="tablist" aria-label="Install command">
-                                <button role="tab" id="tab-claude" aria-controls="panel-claude" aria-selected="true">Claude Code</button>
-                                <button role="tab" id="tab-codex" aria-controls="panel-codex" aria-selected="false" tabindex="-1">Codex</button>
+                            <div
+                                class="install-tabs"
+                                role="tablist"
+                                aria-label="Install command"
+                            >
+                                <button
+                                    role="tab"
+                                    id="tab-claude"
+                                    aria-controls="panel-claude"
+                                    aria-selected="true"
+                                >
+                                    Claude Code
+                                </button>
+                                <button
+                                    role="tab"
+                                    id="tab-codex"
+                                    aria-controls="panel-codex"
+                                    aria-selected="false"
+                                    tabindex="-1"
+                                >
+                                    Codex
+                                </button>
                             </div>
-                            <pre class="install-panel" role="tabpanel" id="panel-claude" aria-labelledby="tab-claude" tabindex="0"><code>/plugin marketplace add securecoder-project/securecoder-plugin
+                            <pre
+                                class="install-panel"
+                                role="tabpanel"
+                                id="panel-claude"
+                                aria-labelledby="tab-claude"
+                                tabindex="0"
+                            ><code>/plugin marketplace add securecoder-project/securecoder-plugin
 /plugin install securecoder@securecoder</code></pre>
-                            <pre class="install-panel" role="tabpanel" id="panel-codex" aria-labelledby="tab-codex" tabindex="0" hidden><code>codex plugin marketplace add securecoder-project/securecoder-plugin
+                            <pre
+                                class="install-panel"
+                                role="tabpanel"
+                                id="panel-codex"
+                                aria-labelledby="tab-codex"
+                                tabindex="0"
+                                hidden
+                            ><code>codex plugin marketplace add securecoder-project/securecoder-plugin
 codex plugin add securecoder@securecoder</code></pre>
                         </div>
                         <div class="product-actions">
@@ -344,7 +400,9 @@ codex plugin add securecoder@securecoder</code></pre>
                 </div>
                 <div class="pub-list" id="pubList" data-limit="3">
                     <div class="pub-card">
-                        <p class="pub-venue">Loading publications from BibTeX...</p>
+                        <p class="pub-venue">
+                            Loading publications from BibTeX...
+                        </p>
                     </div>
                 </div>
                 <div class="pub-actions">
@@ -568,15 +626,37 @@ codex plugin add securecoder@securecoder</code></pre>
                     Darmstadt
                 </p>
                 <div class="footer-links">
-                    <a href="https://github.com/SecureCoder-Project" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a
+                        href="https://github.com/SecureCoder-Project"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="GitHub"
+                        ><i class="fab fa-github"></i
+                    ></a>
                     <span class="footer-divider"></span>
-                    <a href="https://www.st.informatik.tu-darmstadt.de/" target="_blank" rel="noopener">STG Lab</a>
-                    <a href="https://www.informatik.tu-darmstadt.de/ukp" target="_blank" rel="noopener">UKP Lab</a>
+                    <a
+                        href="https://www.st.informatik.tu-darmstadt.de/"
+                        target="_blank"
+                        rel="noopener"
+                        >STG Lab</a
+                    >
+                    <a
+                        href="https://www.informatik.tu-darmstadt.de/ukp"
+                        target="_blank"
+                        rel="noopener"
+                        >UKP Lab</a
+                    >
                     <span class="footer-divider"></span>
-                    <a href="https://www.tu-darmstadt.de/" target="_blank" rel="noopener">TU Darmstadt</a>
+                    <a
+                        href="https://www.tu-darmstadt.de/"
+                        target="_blank"
+                        rel="noopener"
+                        >TU Darmstadt</a
+                    >
                 </div>
                 <p class="footer-copy">
-                    &copy; 2025 SecureCoder Project &mdash; Technische Universit&auml;t Darmstadt
+                    &copy; 2025 SecureCoder Project &mdash; Technische
+                    Universit&auml;t Darmstadt
                 </p>
             </div>
         </footer>
