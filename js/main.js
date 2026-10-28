@@ -302,3 +302,18 @@ async function loadPublications() {
 
 loadPublications();
 loadNews();
+
+// Copy contact email to clipboard
+const copyEmailBtn = document.getElementById('copyEmail');
+if (copyEmailBtn) {
+  const label = copyEmailBtn.querySelector('span');
+  copyEmailBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(copyEmailBtn.dataset.email);
+      label.textContent = 'Copied!';
+    } catch {
+      label.textContent = copyEmailBtn.dataset.email;
+    }
+    setTimeout(() => { label.textContent = 'Copy Address'; }, 2000);
+  });
+}
