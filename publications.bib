@@ -52,13 +52,22 @@
     abstract = "Although transformers dominate many code-specific tasks, they have significant limitations. This paper explores State Space Models (SSMs) as a promising alternative for code understanding tasks such as retrieval, classification, and clone detection. We introduce CodeSSM, the first SSM-based model trained on code corpora to assess its effectiveness. Our results demonstrate that SSMs are more sample-efficient and can extrapolate to longer contexts beyond the pretraining length. Extensive experiments show that SSMs offer a viable alternative to transformers, addressing several their limitations. Additionally, CodeSSM reduces memory usage by up to 64% compared to transformers at a context length of 2048, with greater savings as context length grows.The code is available at https://github.com/abx04/CodeSSM."
 }
 
-@inproceedings{anand2026post-transformer-vision,
-  title = {A Post-Transformer Vision for Efficient and Aligned AI in Software Engineering},
-  author = {Abhinav Anand and Shweta Verma and Daniel Maninger and Mert Tiftikci and Amir Molzam and Tobias Reinhard and Mira Mezini},
-  year = {2026},
-  booktitle = {AI Summit '26},
-  abstract = {Transformer-based autoregressive language models are approaching fundamental limits in memory efficiency, long-context reasoning, and post training alignment — precisely the properties most critical for deployment in engineering and scientific domains. We argue that addressing these limitations requires a shift from the dominant paradigm, and propose an efficient, reliable multi-agent AI system integrating State Space Models (SSMs), Diffusion Language Modeling (DLM), and novel off-policy Reinforcement Learning with Verifiable Reward (RLVR) algorithms designed specifically for DLM. Our system incorporates four interlocking advances: (1) SSM architectures for linear-scaling computation, memory efficiency, and long-context extrapolation; (2) DLM for parallel, iterative generation with constraint-based guarantees; (3) off-policy RLVR for scalable alignment without human annotation bottlenecks; and (4) multi-agent orchestration with retriever, generator, and verifier agents built on a shared SSM foundation with verifiable guardrails. We identify software engineering as the ideal proving ground — its executable, machine-checkable feedback signals provide the training substrate needed to validate this architecture — before extending to broader engineering and scientific domains.},
-  keywords = {state space models, diffusion language models, off-policy RLVR, multi-agent systems, AI for software engineering},
+@inproceedings{10.1145/3806096.3844888,
+author = {Anand, Abhinav and Verma, Shweta and Maninger, Daniel and Tiftikci, Mert and Molzam, Amir and Reinhard, Tobias and Mezini, Mira},
+title = {A Post-Transformer Vision for Efficient and Aligned AI in Software Engineering},
+year = {2026},
+isbn = {9798400726385},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3806096.3844888},
+doi = {10.1145/3806096.3844888},
+abstract = {Transformer-based autoregressive language models are approaching fundamental limits in memory efficiency, long-context reasoning, and post training alignment — precisely the properties most critical for deployment in engineering and scientific domains. We argue that addressing these limitations requires a shift from the dominant paradigm, and propose an efficient, reliable multi-agent AI system integrating State Space Models (SSMs), Diffusion Language Modeling (DLM), and novel off-policy Reinforcement Learning with Verifiable Reward (RLVR) algorithms designed specifically for DLM. Our system incorporates four interlocking advances: (1) SSM architectures for linear-scaling computation, memory efficiency, and long-context extrapolation; (2) DLM for parallel, iterative generation with constraint-based guarantees; (3) off-policy RLVR for scalable alignment without human annotation bottlenecks; and (4) multi-agent orchestration with retriever, generator, and verifier agents built on a shared SSM foundation with verifiable guardrails. We identify software engineering as the ideal proving ground — its executable, machine-checkable feedback signals provide the training substrate needed to validate this architecture — before extending to broader engineering and scientific domains.},
+booktitle = {Proceedings of the ACM AI Leadership Summit 2026},
+articleno = {89},
+numpages = {5},
+keywords = {state space models, diffusion language models, off-policy RLVR, multi-agent systems, AI for software engineering},
+location = {Atlanta, GA, USA},
+series = {AI Summit '26}
 }
 
 @inproceedings{erker-etal-2024-triple,
